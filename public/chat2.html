@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/bootstrap-rtl.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>برنامه چت</title>
+</head>
+
+
+
+<body class="rtl bg-dark">
+
+  <div class="border p-3 mx-3 text-light">
+    <div class="border-bottom pb-3">
+      <h3 class="text-center">
+        لیست افراد آنلاین
+      </h3>
+      <div class="name-container d-flex flex-wrap"></div>
+      <button class="exit btn btn-danger">خروج</button>
+      <button class="btn btn-warning clear ml-1">پاک کن</button>
+      <p class="type d-none mt-2"></p>
+    </div>
+    <div class="rooms pt-3">
+      <!-- <h3 class="text-center">
+        وارد شدن به اتاق
+      </h3> -->
+      <input type="text" class="form-control room" placeholder="نام اتاق را وارد کنید">
+      <button class="room-btn btn btn-primary mt-3">
+        وارد اتاق شوید
+      </button>
+      <h3 class="text-center">
+        لیست اتاق های شما
+      </h3>
+      <div class="room-container d-flex flex-wrap">
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="d-flex flex-wrap text-container p-3 flex-column"></div>
+  <form action="" class="form px-3 form-inline">
+    <input type="text" class="form-control text w-75" placeholder="پیام خود را وارد کنید" autofocus>
+    <select class="form-control w-25">
+      <option selected value="">
+        عمومی
+      </option>
+    </select>
+    <button type="submit" class="btn btn-primary mt-3">ارسال</button>
+  </form>
+</body>
+
+<script src="./js/socket.io.min.js"></script>
+<script src="./js/chat.js"></script>
+
+
+</html>

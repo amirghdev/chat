@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود به برنامه چت</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body class="container text-right text-light bg-dark d-none">
+
+  <form action="" class="mt-5 form">
+    <input type="text" class="form-control name text-right" placeholder="نام خود را وارد کنید">
+    <div class="d-flex align-items-center mt-3 flex-row-reverse">
+      <button class="btn btn-primary public ml-2" type="submit">ورود</button>
+      <!-- <button class="btn btn-primary ml-2 room" data-room="room1">اتاق شماره 1 </button>
+      <button class="btn btn-primary ml-2 room" data-room="room2">اتاق شماره 2 </button>
+      <button class="btn btn-primary ml-2 room" data-room="room3">اتاق شماره 3 </button> -->
+    </div>
+  </form>
+  <script src="./js/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+
+    const form = document.querySelector(".form"),
+      name = document.querySelector(".name"),
+      public = document.querySelector(".public"),
+      btns = document.querySelectorAll(".btn");
+
+    if (localStorage.getItem("name")) {
+      location.href = "./chat2.html";
+    }
+
+    document.body.classList.remove("d-none");
+
+    name.focus();
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (name.value) {
+        localStorage.setItem("name", name.value);
+        // localStorage.setItem("room", "public");
+        location.href = "./chat2.html";
+      }
+    })
+
+
+    // btns.forEach((btn) => {
+    //   btn.addEventListener("click", () => {
+    //     let room = btn.getAttribute("data-room");
+    //     console.log(room);
+    //   })
+    // })
+  </script>
+</body>
+
+</html>
